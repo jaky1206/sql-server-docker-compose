@@ -3,6 +3,7 @@ version: '3.9'
 services:
   
   db:
+    user: root
     build:
       context: ./docker/
       dockerfile: Dockerfile
@@ -14,13 +15,5 @@ services:
       MSSQL_PID: "Developer"
     volumes:
         - ./database:/var/opt/mssql/data
-    healthcheck:
-      test: sqlcmd -S db1.internal.dev.test.com -U sa -P 'orion123@' -Q 'SELECT GETDATE()'
-    networks:
-      mynetwork:
-        aliases:
-          - db1.internal.dev.test.com
+        - ./deployment:/home/deployment
 
-networks:
-  mynetwork:
-    driver: bridge
