@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 services:
   
@@ -15,11 +15,11 @@ services:
     volumes:
         - ./database:/var/opt/mssql/data
     healthcheck:
-      test: sqlcmd -S db1.internal.dev.nuarca.com -U SA -P 'Alaska2017' -Q 'SELECT GETDATE()'
+      test: sqlcmd -S db1.internal.dev.test.com -U sa -P 'orion123@' -Q 'SELECT GETDATE()'
     networks:
       mynetwork:
         aliases:
-          - db1.internal.dev.nuarca.com
+          - db1.internal.dev.test.com
 
 networks:
   mynetwork:
