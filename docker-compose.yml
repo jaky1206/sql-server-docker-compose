@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   
-  db:
+  mssql:
     user: root
     build:
       context: ./docker/
