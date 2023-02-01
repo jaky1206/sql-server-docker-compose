@@ -1,11 +1,11 @@
-version: '3.9'
+version: "3.7"
 
 services:
-  
+
   mssql:
     user: root
     build:
-      context: ./docker/
+      context: .
       dockerfile: dockerfile
     ports:
       - "1433:1433"
@@ -17,3 +17,6 @@ services:
         - ./data:/var/opt/mssql/data
         - ./scripts:/home/scripts
 
+volumes:
+  data:
+  scripts:
