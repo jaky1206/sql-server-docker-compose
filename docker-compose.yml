@@ -6,7 +6,7 @@ services:
     user: root
     build:
       context: ./docker/
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     ports:
       - "1433:1433"
     environment:
@@ -14,6 +14,6 @@ services:
       ACCEPT_EULA: "Y"
       MSSQL_PID: "Developer"
     volumes:
-        - ./database:/var/opt/mssql/data
-        - ./deployment:/home/deployment
+        - ./data:/var/opt/mssql/data
+        - ./scripts:/home/scripts
 
