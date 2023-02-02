@@ -3,7 +3,6 @@ version: "3.7"
 services:
 
   mssql:
-    user: root
     build:
       context: .
       dockerfile: dockerfile
@@ -15,8 +14,8 @@ services:
       MSSQL_PID: "Developer"
     volumes:
         - ./data:/var/opt/mssql/data
-        - ./scripts:/home/scripts
+        - ./backup:/home/backup
 
 volumes:
   data:
-  scripts:
+  backup:
