@@ -14,8 +14,6 @@ services:
       MSSQL_PID: "Developer"
     volumes:
         - ./data:/var/opt/mssql/data
-        - ./backup:/home/backup
 
 volumes:
   data:
-  backup:
